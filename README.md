@@ -1,4 +1,4 @@
-# ton_egoswap
+# Read Me
 # Build contract
 ```sh
 cd contracts
