@@ -1,11 +1,10 @@
 # ton_egoswap
-- Build contract
+# Build contract
 cd contracts
 npx func-js counter.fc --boc counter.cell
-- deploy smar contracts
-
+# deploy smar contracts
 yarn deploy
-- get infos
+# get infos
 yarn getter
-- trasnfer message
+# trasnfer message
 yarn sendmsg
