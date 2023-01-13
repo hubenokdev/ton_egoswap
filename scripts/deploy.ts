@@ -41,7 +41,7 @@ async function deploy() {
   console.log("wallet start ====> " + wallet.address);
 
   let initDataCell = initData(wallet.address); // the function we've implemented just now
-  const initCodeCell = Cell.fromBoc(fs.readFileSync("../contracts/counter.cell"))[0]; // compilation output from step 6
+  const initCodeCell = Cell.fromBoc(fs.readFileSync("./contracts/counter.cell"))[0]; // compilation output from step 6
 
   let newContractAddress = contractAddress(0, {code: initCodeCell, data: initDataCell});
   console.log("contract start ====> " + (netmode == 'test' ? "testnet: " : "mainnet: ") + newContractAddress);
@@ -60,7 +60,7 @@ async function deploy() {
     messages: [
       internal({
         to: newContractAddress.toString(),
-        value: '0.03',
+        value: '0.01',
         init: { data: initDataCell, code: initCodeCell },
         bounce: false,
       }),
