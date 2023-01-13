@@ -2,7 +2,8 @@
 - Build contract
 cd contracts
 npx func-js counter.fc --boc counter.cell
-- deploy
+- deploy smar contracts
+
 yarn deploy
 - get infos
 yarn getter
