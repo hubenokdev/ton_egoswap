@@ -15,8 +15,6 @@ const newbot = Address.parse("EQATxUMDtyQacmE5lKmIYsF8bvtsaSuJ5PlwwR2eVclyJx5V")
 
 let netmode = 'main';
 const testnet_mnemonic = "wealth penalty dress update vacuum wise solution prize exit hero among catalog pioneer busy trial retreat east much loyal mango galaxy raven brother merge"; // your 24 secret words
-const mainnet_mnemonic = "transfer milk cage october head wild brain voyage chief opinion coil high gap outside fury someone jaguar wagon hello route barrel net defy boy"; // your 24 secret words
-//const mainnet_mnemonic = "worry miracle enter gate amazing fashion hurt language novel stove churn lobster amazing charge bench shoulder outer hobby top unhappy coil peace syrup bamboo"; // your 24 secret words
 
 main();
 
@@ -44,7 +42,7 @@ async function sendMessage() {
 
   const client = new TonClient({ endpoint });
   console.log("contract start ====> " + newContractAddress);
-  const key = await mnemonicToWalletKey(netmode == 'test' ? testnet_mnemonic.split(" ") : mainnet_mnemonic.split(" "));
+  const key = await mnemonicToWalletKey(netmode == 'test' ? testnet_mnemonic.split(" ") : fs.readFileSync("alicewallet.txt").toString().split(" "));
   const wallet = WalletContractV3R2.create({
     publicKey: key.publicKey,
     workchain: 0,

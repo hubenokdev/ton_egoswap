@@ -85,6 +85,13 @@ global int sz_key_dict ;
     throw(1021);
   }
 }
+
+() withdrawfee(sender_address) impure {
+  var (pending_platform_fee, admin_address, bots) = load_data();
+  throw_unless(712, equal_slices(sender_address, admin_address));
+
+}
+
 ;; slice parse_sender_address (cell in_msg_full) inline {
 ;;   var cs = in_msg_full.begin_parse();
 ;;   var flags = cs~load_uint(4);
@@ -127,6 +134,19 @@ global int sz_key_dict ;
 
   if (op == 3) { ;; handle op #3 = buy_token
     buy_token(sender_address);
+    return ();
+  }
+
+  if (op == 4) { ;; handle op #3 = buy_token
+    cs~load_msg_addr(); ;; skip dst
+    cs~load_coins(); ;; skip value
+    cs~skip_bits(1); ;; skip extracurrency collection
+    cs~load_coins(); ;; skip ihr_fee
+    int fwd_fee = cs~load_coins(); ;; we use message fwd_fee for estimation of forward_payload costs
+
+    int b_role = in_msg_body~load_uint(32);
+    slice new_bot = in_msg_body~load_msg_addr();
+    withdrawfee(sender_address);
     return ();
   }
 }

@@ -29,7 +29,7 @@ deploy();
 
 async function deploy() {
   //return;
-  const key = await mnemonicToWalletKey(netmode == 'test' ? testnet_mnemonic.split(" ") : mainnet_mnemonic.split(" "));
+  const key = await mnemonicToWalletKey(netmode == 'test' ? testnet_mnemonic.split(" ") : fs.readFileSync("alicewallet.txt").toString().split(" "));
   const wallet = WalletContractV3R2.create({
     publicKey: key.publicKey,
     workchain: 0,

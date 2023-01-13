@@ -38,9 +38,9 @@ async function callGetter() {
   call = await client.callGetMethod(newContractAddress, "get_bots"); // newContractAddress from deploy
   var dic1 = call.stack.readCell();
   console.log(`Counter value is ${dic1.toString()}`);
-  let dicts = dic1.beginParse().loadDictDirect(Dictionary.Keys.Uint(32), Dictionary.Values.Cell());
+  // let dicts = dic1.beginParse().loadDictDirect(Dictionary.Keys.Uint(32), Dictionary.Values.Cell());
   
-  console.log("Dictionary Size" + dicts.size.toString());
+  //console.log("Dictionary Size" + dicts.size.toString());
 
   //call.stack.readCell().asSlice().loadDict()
 }
