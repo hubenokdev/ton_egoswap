@@ -5,10 +5,12 @@ cd contracts
 npx func-js counter.fc --boc counter.cell
 ```
 
-# deploy smar contracts
+# deploy smart contracts
+create alicewallet.txt and input mnemonic to there.
 ```sh
 yarn deploy
 ```
+contract_address.txt will be generated.
 # get infos
 ```sh
 yarn getter
