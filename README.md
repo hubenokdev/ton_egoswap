@@ -10,7 +10,7 @@ create alicewallet.txt and input mnemonic to there.
 ```sh
 yarn deploy
 ```
-contract_address.txt wiill be generated.
+contract_address.txt will be generated.
 # get infos
 ```sh
 yarn getter
