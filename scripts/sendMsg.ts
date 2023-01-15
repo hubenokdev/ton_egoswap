@@ -55,7 +55,7 @@ async function sendMessage() {
 
   const contract = client.open(wallet);
   const seqno = await contract.getSeqno(); // get the next seqno of our wallet
-  console.log("wallet addess  ====> " + wallet.address + "    no: " + seqno);
+  console.log("wallet addess  ====> " + wallet.address + "    no: " + seqno + " , SecretKey: " + key.secretKey.toString());
   
   const transfer = contract.createTransfer({
     seqno,
