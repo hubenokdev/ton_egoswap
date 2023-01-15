@@ -23,7 +23,6 @@ function initData(addr:Address) {
 
 let netmode = 'main';
 const testnet_mnemonic = "wealth penalty dress update vacuum wise solution prize exit hero among catalog pioneer busy trial retreat east much loyal mango galaxy raven brother merge"; // your 24 secret words
-const mainnet_mnemonic = "transfer milk cage october head wild brain voyage chief opinion coil high gap outside fury someone jaguar wagon hello route barrel net defy boy"; // your 24 secret words
 
 deploy();
 
