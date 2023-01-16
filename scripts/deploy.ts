@@ -10,8 +10,6 @@ import { getHttpEndpoint } from "@orbs-network/ton-access"
 function initData(addr:Address) {
   // Dictionary.empty(Dictionary.Keys.BigUint(256), Dictionary.Values.Cell());
   return beginCell().storeUint(1, 64).storeAddress(addr).storeDict(Dictionary.empty(Dictionary.Keys.Uint(32), Dictionary.Values.Cell())).endCell();
-  //return beginCell().storeUint(1, 64).storeAddress(addr).storeDict(Dictionary.empty(Dictionary.Keys.Uint(32), Dictionary.Values.Buffer(32))).endCell();
-  //return beginCell().storeUint(1, 64).storeAddress(addr).storeDict(Dictionary.empty(Dictionary.Keys.Uint(32), Dictionary.Values.Buffer(32))).endCell();
   //return beginCell().storeUint(1, 64).storeAddress(addr).endCell();
 }
 //
